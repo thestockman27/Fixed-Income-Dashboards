@@ -19,10 +19,11 @@ to do:
 - automate everything using airflow
 
 
-- variable selection?
+- variable selection...yeah we are going to need this
     - rank correlation
     - dtw?
     - maybe a future improvement...
  
+- expand databases from FRED
 
 
