@@ -23,7 +23,8 @@ to do:
     - add live-performance to backtest
 
 
-- automate everything using airflow
+- automate everything using airflow or prefect
+    - # https://www.prefect.io/
     - install linux Virtual machine
     - install airflow
 
