@@ -42,5 +42,6 @@ Extra Credit:
  
 - expand databases from FRED
 - roll out more models
-
+- debugger
+- unit tests
 
