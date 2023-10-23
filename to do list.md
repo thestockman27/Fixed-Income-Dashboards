@@ -9,7 +9,7 @@ to do:
         - calculate
             - pos
             - turnover
-            - ret = pos * actual - turnover (double check long and short logic here)
+            - ret = pos * total return - turnover (double check long and short logic here)
                 - verify total return calculation
             - cumulative return of $1
             - static long
