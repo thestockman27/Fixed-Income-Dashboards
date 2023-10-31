@@ -6,16 +6,10 @@ to do:
         - ensure dates line up
         - insamp, outsamp, fullsamp
     - write one calculate_performance function
-        - calculate
-            - pos
-            - turnover
-            - ret = pos * total return - turnover (double check long and short logic here)
-                - verify total return calculation
-            - cumulative return of $1
-            - static long
-            - ratios (sharpe, sortino, information)
-            - drawdowns
+        - cum ret on short/long trades
+        - % short
         - run it for each sample period
+            - only have the OOS currently...
     - export as table or something nice looking with graphs
 
 - code for forecasting off of new data
