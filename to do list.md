@@ -14,9 +14,11 @@ to do:
 
 - code for forecasting off of new data
     - import latest observations from SQL databases and model
+        - update the merge databases to add all the lags and save it as a new database, AllVar
+        - import data for updating model's predictive variables from AllVar
     - some sort of visualization?
     - track forecasts separate from backtest
-    - add live-performance to backtest
+    - add live-performance to backtest results
 
 
 - automate everything using airflow or prefect
