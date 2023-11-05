@@ -1,24 +1,20 @@
 to do:
 
-- publish final model stats
-    - create dataframe containing
-        - date, actual (Y), lead Y (Y1), forecast for the lead (ForY1)
-        - ensure dates line up
-        - insamp, outsamp, fullsamp
-    - write one calculate_performance function
-        - cum ret on short/long trades
-        - % short
-        - run it for each sample period
-            - only have the OOS currently...
-    - export as table or something nice looking with graphs
+- looks like the Treasury databases are not updating properly
+    - need to fix before continuing
+    - something is wrong with the logic when updating diff and % diff databases
+    -  need to write some logic that uses the second to last date so that old data is pulled for calculating diff and percent diff
+    - will also need to add code to only add obs after the latest 
+
+
 
 - code for forecasting off of new data
-    - import latest observations from SQL databases and model
-        - update the merge databases to add all the lags and save it as a new database, AllVar
-        - import data for updating model's predictive variables from AllVar
     - some sort of visualization?
     - track forecasts separate from backtest
     - add live-performance to backtest results
+        - import backtest performance calculation file
+        - add new preds, and obs of Y
+        - update calcs
 
 
 - automate everything using airflow or prefect
@@ -32,7 +28,8 @@ Extra Credit:
 - variable selection...yeah we are going to need this
     - rank correlation
         - review this
-    - dtw?
+    - dtw
+        - people are starting to use it
 - model selection
     - investigate successive halving for future training
  
