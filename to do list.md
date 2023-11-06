@@ -1,12 +1,8 @@
 to do:
 
-- looks like the Treasury databases are not updating properly
-    - need to fix before continuing
-    - something is wrong with the logic when updating diff and % diff databases
-    -  need to write some logic that uses the second to last date so that old data is pulled for calculating diff and percent diff
-    - will also need to add code to only add obs after the latest 
-
-
+- rebuild the databases
+    - Treasury databases is adding an observation for the current unfinished period for some reason
+    - may be able to solve using some sort of logic that removes future dates
 
 - code for forecasting off of new data
     - some sort of visualization?
