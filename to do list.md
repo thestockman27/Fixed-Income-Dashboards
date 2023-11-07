@@ -1,5 +1,9 @@
 to do:
 
+- Re-run Backtests
+    - noticed some missing dates in the final backtest results that arose from an issue with dropping rows with inf or -inf
+    - may just have to punt these from the variable selection
+
 - code for forecasting off of new data
     - need to add back first date of the backtest dataframe so calcs are the same
     - some sort of visualization?
