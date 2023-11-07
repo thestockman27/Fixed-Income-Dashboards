@@ -1,10 +1,7 @@
 to do:
 
-- rebuild the databases
-    - Treasury databases is adding an observation for the current unfinished period for some reason
-    - may be able to solve using some sort of logic that removes future dates
-
 - code for forecasting off of new data
+    - need to add back first date of the backtest dataframe so calcs are the same
     - some sort of visualization?
     - track forecasts separate from backtest
     - add live-performance to backtest results
