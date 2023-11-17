@@ -2,7 +2,10 @@ to do:
 
 - Re-run Backtests
     - noticed some missing dates in the final backtest results that arose from an issue with dropping rows with inf or -inf
-    - may just have to punt these from the variable selection
+        - corrected observations in the treasury database
+        - re-run merge databases script
+        - re-run variable selection
+        - re-train models
 
 - code for forecasting off of new data
     - need to add back first date of the backtest dataframe so calcs are the same
