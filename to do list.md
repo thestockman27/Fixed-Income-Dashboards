@@ -2,8 +2,6 @@ to do:
 
 - Re-run Backtests
     - noticed some missing dates in the final backtest results that arose from an issue with dropping rows with inf or -inf
-        - corrected observations in the treasury database
-        - re-run merge databases script
         - re-run variable selection
         - re-train models
 
