@@ -1,8 +1,11 @@
 to do:
 
+- add auction data (treasury direct)
+
+- really need to make sure that the variable selection is dialed in
+
 - Re-run Backtests
     - noticed some missing dates in the final backtest results that arose from an issue with dropping rows with inf or -inf
-        - re-run variable selection
         - re-train models
 
 - code for forecasting off of new data
@@ -31,7 +34,7 @@ Extra Credit:
 - model selection
     - investigate successive halving for future training
  
-- expand databases from FRED
+- expand databases from FRED,
 - roll out more models
 - debugger
 - unit tests
