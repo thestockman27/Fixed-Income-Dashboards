@@ -2,9 +2,12 @@ to do:
 
 - THE GOAL IS TO HAVE SOMETHING PRESENTABLE BY JANUARY 2024
 
-- really need to make sure that the variable selection is dialed in
-    - run tests on variables, lag them once selected
-        - will need to understand how the correlation function operates
+- specify some variables to be in the backtest
+    - y0 value of target
+    - the rest of the curve
+
+- learning curve plot
+    - need to verify that this can be implemented alongside a timeseries cross-validation
 
 - Re-run Backtests
     - noticed some missing dates in the final backtest results that arose from an issue with dropping rows with inf or -inf
