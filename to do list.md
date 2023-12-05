@@ -34,7 +34,7 @@ to do:
 
 - add a README file to summarize the repository
 
-
+- start trading on IBKR using futures
 
 
 Extra Credit:
@@ -59,7 +59,7 @@ Extra Credit:
  
 - pyspark?
 
-- expand databases from FRED,
+- expand databases from FRED, repo facility?,
 - roll out more models
 - debugger
 - unit tests
