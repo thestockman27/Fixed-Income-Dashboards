@@ -76,7 +76,7 @@ grid_search.fit(X, y)
 ```
 Performance is compared across hyperparameter values and the best performing model is saved.
 
-![Hyperparameter Histogram picture](https://github.com/thestockman27/Fixed-Income-Dashboards/blob/main/Hyperparameter-Histogram.png)
+![Hyperparameter Histogram picture](https://github.com/thestockman27/Fixed-Income-Dashboards/blob/main/Hyperparameter%20Histogram.png)
 
 
 ## Back-test Performance Calculation
@@ -97,7 +97,7 @@ for i in range(1, len(merged_data)):
 Performance is calculated for our model with consideration given to transaction costs. For the purpose of comparison, static long and static short performance is also calculated.
 - #### [Back-test Performance](https://github.com/thestockman27/Fixed-Income-Dashboards/blob/main/Backtest%20Performance%20Calculation.ipynb)
 
-![OOS performance chart](https://github.com/thestockman27/Fixed-Income-Dashboards/blob/main/Backtest-Chart.png)
+![OOS performance chart](https://github.com/thestockman27/Fixed-Income-Dashboards/blob/main/Backtest%20Chart.png)
 
 ## Updating of Live-performance
 - *Not yet complete*
