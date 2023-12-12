@@ -2,11 +2,7 @@ to do:
 
 - THE GOAL IS TO HAVE SOMETHING PRESENTABLE BY JANUARY 2024
 
-- parallelize backtests
-    - can i just re-run the cv for the best_estimator???
-    - latest run is taking over 48 hours...
-    - perhaps just run gridseach in parallel and then retrain best estimator to get the predictions from the cv
-    - successive halving?
+- fix variable selection so that the target variable is lagged separately and without the "_lead" suffix
     - 
 
 - code for forecasting off of new data
@@ -29,7 +25,9 @@ to do:
 
 - start trading on IBKR using futures
 
-
+- feature engineering
+    -  longer run averages
+    - 
 
 
 Extra Credit:

@@ -38,7 +38,7 @@ print("Databases created successfully.")
 ## Variable Selection
 Databases are first merged to create a comprehensive dataset of over 1800 observations of greater than 500 unique variables. This larger data contains variables of various reporting histories and levels of completeness. An ideal trade-off between depth and breadth of the dataset is presumed by calculating the percentage of complete variables over time and eye-balling the best cut-off.
 
-![pic from merge databases script]()
+![pic from merge databases script](https://github.com/thestockman27/Fixed-Income-Dashboards/blob/main/merged_databases_output.png)
 
 
 Due to constraints in compute resources the remainging dataset is reduced further via statistical tests. We first assess the correlation of each variable with the lead of the target variable. After selecting the top variables, they are subject to a test of multicollinearity which further reduces the pool of potential independent variables.
@@ -76,7 +76,7 @@ grid_search.fit(X, y)
 ```
 Performance is compared across hyperparameter values and the best performing model is saved.
 
-![Hyperparameter Histogram picture](https://github.com/thestockman27/Fixed-Income-Dashboards/blob/main/merged_databases_output.png)
+![Hyperparameter Histogram picture](https://github.com/thestockman27/Fixed-Income-Dashboards/blob/main/Hyperparameter-Histogram.png)
 
 
 ## Back-test Performance Calculation
@@ -97,7 +97,7 @@ for i in range(1, len(merged_data)):
 Performance is calculated for our model with consideration given to transaction costs. For the purpose of comparison, static long and static short performance is also calculated.
 - #### [Back-test Performance](https://github.com/thestockman27/Fixed-Income-Dashboards/blob/main/Backtest%20Performance%20Calculation.ipynb)
 
-![OOS performance chart]()
+![OOS performance chart](https://github.com/thestockman27/Fixed-Income-Dashboards/blob/main/Backtest-Chart.png)
 
 ## Updating of Live-performance
 - *Not yet complete*
