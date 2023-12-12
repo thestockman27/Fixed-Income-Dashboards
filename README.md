@@ -76,7 +76,7 @@ grid_search.fit(X, y)
 ```
 Performance is compared across hyperparameter values and the best performing model is saved.
 
-![Hyperparameter Histogram picture]()
+![Hyperparameter Histogram picture](https://github.com/thestockman27/Fixed-Income-Dashboards/blob/main/merged_databases_output.png)
 
 
 ## Back-test Performance Calculation

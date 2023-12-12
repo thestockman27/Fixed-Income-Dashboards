@@ -2,9 +2,12 @@ to do:
 
 - THE GOAL IS TO HAVE SOMETHING PRESENTABLE BY JANUARY 2024
 
-- Re-run Backtests
-    - noticed some missing dates in the final backtest results that arose from an issue with dropping rows with inf or -inf
-        - re-train models
+- parallelize backtests
+    - can i just re-run the cv for the best_estimator???
+    - latest run is taking over 48 hours...
+    - perhaps just run gridseach in parallel and then retrain best estimator to get the predictions from the cv
+    - successive halving?
+    - 
 
 - code for forecasting off of new data
     - need to add back first date of the backtest dataframe so calcs are the same
@@ -18,15 +21,11 @@ to do:
 
 - automate everything using airflow or prefect
     - # https://www.prefect.io/
+                or
     - install linux Virtual machine
     - install airflow
 
-- convert everything to .py files?
-    - not sure if this is necessary
-
-
-- add a README file to summarize the repository
-    - 
+- finish README.md
 
 - start trading on IBKR using futures
 
@@ -37,6 +36,8 @@ Extra Credit:
 - clean up repo...
     - organize with folders and delete unneccesary things
 - copy everything over to a repo with a name that fits this project better
+- convert everything to .py files?
+    - not sure if this is necessary
 - add auction data (treasury direct)
     - ok so this dataset is highly discontinuous.
     - I can create a weekly timeseries dataset out of it by coercing variables as follows:
@@ -60,4 +61,4 @@ Extra Credit:
 - debugger
 - unit tests
 - transfer learning, new datasets? different tenors? new data of the same y?
-    - gbm has a 'warm start' feature that sounds similar to transfer learning
+    - gbm has a 'partial_fit' feature that sounds similar to transfer learning
