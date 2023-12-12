@@ -60,3 +60,4 @@ Extra Credit:
 - debugger
 - unit tests
 - transfer learning, new datasets? different tenors? new data of the same y?
+    - gbm has a 'warm start' feature that sounds similar to transfer learning

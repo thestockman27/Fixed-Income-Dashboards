@@ -2,7 +2,7 @@
 This project provides an end-to-end pipeline for forecasting financial securities. 
 
 ## Data Ingestion
-Data is collected from various sources via APIs and urls to JSON files. After cleaning and transforming the raw data, it is stored with SOLite databases in tables specific to the source and other defining factors. These tables are updated programatically, however, this has yet to be automated. Data integrity tests are performed upon appending the tables.
+Data is collected from various sources via APIs and urls to JSON files. After cleaning and transforming the raw data, it is stored with SQLite databases in tables specific to the source and other defining factors. These tables are updated programatically, however, this has yet to be automated. Data integrity tests are performed upon appending the tables.
 ```python
 conn = sqlite3.connect('Treasury_Yields_data.db')
 cursor = conn.cursor()
@@ -36,7 +36,7 @@ print("Databases created successfully.")
 ```
 
 ## Variable Selection
-Databases are first merged to create a comprehensive dataset of over X,XXX variables. This larger data contains variables of various reporting histories and levels of completeness. An ideal trade-off between depth and breadth of the dataset is presumed by calculating the percentage of complete variables over time and eye-balling the best cut-off.
+Databases are first merged to create a comprehensive dataset of over 1800 observations of greater than 500 unique variables. This larger data contains variables of various reporting histories and levels of completeness. An ideal trade-off between depth and breadth of the dataset is presumed by calculating the percentage of complete variables over time and eye-balling the best cut-off.
 
 ![pic from merge databases script]()
 
@@ -63,11 +63,11 @@ We specify a one-step-ahead time-series cross-validation and specify proposed hy
 gbm = GradientBoostingClassifier(random_state=248)
 
 param_grid = {
-    'n_estimators': [100, 150],
+    'n_estimators': [100, 200],
     'learning_rate': [0.01, 0.1],
-    'subsample': [0.75],
-    'max_depth': [3, 13],
-    'min_samples_leaf': [2, 5]
+    'subsample': [0.75, 1.0],
+    'max_depth': [15, 35],
+    'min_samples_leaf': [1]
 }
 
 grid_search = GridSearchCV(gbm, param_grid, cv=tscv, scoring=scorer(), verbose=1)
