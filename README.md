@@ -100,7 +100,12 @@ Performance is calculated for our model with consideration given to transaction 
 ![OOS performance chart](https://github.com/thestockman27/Fixed-Income-Dashboards/blob/main/Backtest%20Chart.png)
 
 ## Updating of Live-performance
-- *Not yet complete*
+Once the model has been brought into production the live performance is tracked.
+
+*To Do*
+- OOS vs Live
+    - add a table here
+    - 
 
 ## Automation
 - Portions of the project are intended to be automated using [Prefect](https://www.prefect.io/). 

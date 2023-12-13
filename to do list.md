@@ -2,18 +2,6 @@ to do:
 
 - THE GOAL IS TO HAVE SOMETHING PRESENTABLE BY JANUARY 2024
 
-- fix variable selection so that the target variable is lagged separately and without the "_lead" suffix
-    - 
-
-- code for forecasting off of new data
-    - need to add back first date of the backtest dataframe so calcs are the same
-    - some sort of visualization?
-    - track forecasts separate from backtest
-    - add live-performance to backtest results
-        - import backtest performance calculation file
-        - add new preds, and obs of Y
-        - update calcs
-
 
 - automate everything using airflow or prefect
     - # https://www.prefect.io/
@@ -24,6 +12,7 @@ to do:
 - finish README.md
 
 - start trading on IBKR using futures
+    - once it actually performs well...
 
 - feature engineering
     -  longer run averages
@@ -45,6 +34,9 @@ Extra Credit:
             - make each observation coincide with week-end (whatever the other databases are)
             - was this tenor brought to market? results? discount rate? bid-to-cover?
     - updating would have to accommodate announcements of future issues that appear in the dataset
+- add currency data
+- add foreign yield data
+    - 
 - LIME for model interpretability
 - dtw
     - people are starting to use it
