@@ -6,7 +6,7 @@ to do:
 - automate everything using airflow or prefect
     - # https://www.prefect.io/
                 or
-    - install linux Virtual machine
+    - docker
     - install airflow
 
 - finish README.md
