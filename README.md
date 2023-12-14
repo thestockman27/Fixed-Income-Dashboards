@@ -108,5 +108,5 @@ Once the model has been brought into production the live performance is tracked.
     - 
 
 ## Automation
-- Portions of the project are intended to be automated using [Prefect](https://www.prefect.io/). 
-- *Have not started this yet*
+- Portions of the project are intended to be automated using [Apache Airflow](https://airflow.apache.org/) and [Docker](https://www.docker.com/)
+- *just started this portion*

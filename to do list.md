@@ -4,10 +4,7 @@ to do:
 
 
 - automate everything using airflow or prefect
-    - # https://www.prefect.io/
-                or
-    - docker
-    - install airflow
+    -learn how to use airflow!
 
 - finish README.md
 
