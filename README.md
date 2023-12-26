@@ -1,5 +1,7 @@
-# **Welcome to my project**
-This project provides an end-to-end pipeline for forecasting financial securities. 
+# **Welcome!**
+This project provides an end-to-end pipeline for forecasting financial securities. It is not yet complete, as I have been recreating and refining the process completely from scratch and across languages (from R to Pyhton). It is very similar to the process that I was responsible for in my previous role but I have made several adjustments and improvements to the methodology.
+
+Realistically, this project will be constrained by the data and compute resources freely available to me. Therefore, it is mainly aimed at demonstrating capability. 
 
 ## Data Ingestion
 Data is collected from various sources via APIs and urls to JSON files. After cleaning and transforming the raw data, it is stored with SQLite databases in tables specific to the source and other defining factors. These tables are updated programatically, however, this has yet to be automated. Data integrity tests are performed upon appending the tables.
@@ -80,7 +82,7 @@ Performance is compared across hyperparameter values and the best performing mod
 
 
 ## Back-test Performance Calculation
-We import the back-test object and retrieve the predictions made by the best estimator. A dataframe is constructed using these predictions, the accompanying dates, and the original values of the target variable. For interest rates, [total return is calculated](https://datarepository.eur.nl/articles/dataset/Data_Treasury_Bond_Return_Data_Starting_in_1962/8152748?file=38737083) as this value was not publically accessible.
+We import the back-test object and retrieve the predictions made by the best estimator. A dataframe is constructed using these predictions, the accompanying dates, and the original values of the target variable. For interest rates, [total return is calculated](https://datarepository.eur.nl/articles/dataset/Data_Treasury_Bond_Return_Data_Starting_in_1962/8152748?file=38737083) as this value was not publicly accessible.
 ```python
 merged_data['ret'] = 0
 # Calculate 'ret' for each row
@@ -109,4 +111,34 @@ Once the model has been brought into production the live performance is tracked.
 
 ## Automation
 - Portions of the project are intended to be automated using [Apache Airflow](https://airflow.apache.org/) and [Docker](https://www.docker.com/)
-- *just started this portion*
+
+- Must identify how to create a custom docker image of airflow that contains the modules necessary to run this project
+
+-  Here is an example of the code that will be used once the new docker image is created:
+```python
+# Update Treasury Yields Database DAG
+from datetime import datetime, timedelta
+from airflow import DAG
+#from airflow.providers.papermill.operators.papermill import PapermillOperator
+from airflow.providers.papermill.operators.papermill import PapermillOperator 
+
+default_args = {
+    'owner':'Derek',
+    'retries':1,
+    'retry_delay':timedelta(minutes=2) 
+}
+
+
+with DAG(
+    dag_id='Update Treasury Yields Database',
+    default_args=default_args,
+    schedule_interval='@Weekly',
+    start_date=datetime(2023,12,16,2)
+) as dag:
+    run_this = PapermillOperator(
+        task_id="Update Database",
+        input_nb="C:/Users/dstoc/Documents/Python Scripts/Fixed Income Dashboards/Treasury Yields db update.ipynb",
+        output_nb="C:/Users/dstoc/Documents/Python Scripts/Fixed Income Dashboards/Treasury Yields db update out-{{ execution_date }}.ipynb"
+    )
+
+```

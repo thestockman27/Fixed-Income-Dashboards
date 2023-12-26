@@ -3,11 +3,17 @@ to do:
 - THE GOAL IS TO HAVE SOMETHING PRESENTABLE BY JANUARY 2024
 
 
-- automate everything using airflow or prefect
-    -learn how to use airflow!
+- convert data download files to .py files and create a simple DAG
+    -  need to create my own docker image of airflow that contains the necessary modules to run my code
+    - base image does not come with everything
+    - additional PIP requirements is apparently not a safe method as updates can ruin the image...
 
 - feature engineering
-    - longer run averages
+    - granger causality
+        - use ACF/PACF for selecting lag lengths
+        - replace the correlation test
+        - probably a good idea to separate the variable selection and backtest files
+    - longer run averages of target variable
     - volatility
 
 - finish README.md
@@ -51,3 +57,5 @@ Extra Credit:
 - unit tests
 - transfer learning, new datasets? different tenors? new data of the same y?
     - gbm has a 'partial_fit' feature that sounds similar to transfer learning
+
+- git ignore file for airflow repo
