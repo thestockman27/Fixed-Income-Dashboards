@@ -9,11 +9,9 @@ to do:
     - additional PIP requirements is apparently not a safe method as updates can ruin the image...
 
 - feature engineering
-    - granger causality
-        - use ACF/PACF for selecting lag lengths
-        - replace the correlation test
-        - probably a good idea to separate the variable selection and backtest files
     - longer run averages of target variable
+        - I'll need to code up the inclusion of the y0 value of the target variable in the final batch of variables
+        - rolling cumprod (4,13,26)
     - volatility
 
 - finish README.md
