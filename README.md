@@ -1,7 +1,7 @@
 # **Welcome!**
-This project provides an end-to-end pipeline for forecasting financial securities. It is not yet complete, as I have been recreating and refining the process completely from scratch and across languages (from R to Pyhton). It is very similar to the process that I was responsible for in my previous role but I have made several adjustments and improvements to the methodology.
+This project provides an end-to-end pipeline for forecasting financial securities. It is not yet complete, as I have been recreating and refining the process completely from scratch and across languages (from R to Python). It is very similar to the process that I was responsible for in my previous role but I have made several adjustments and improvements to the methodology.
 
-Realistically, this project will be constrained by the data and compute resources freely available to me. Therefore, it is mainly aimed at demonstrating capability. 
+Realistically, this project will be constrained by the data and compute resources freely available to me. Therefore, it is mainly intended to demonstrate capability.
 
 ## Data Ingestion
 Data is collected from various sources via APIs and urls to JSON files. After cleaning and transforming the raw data, it is stored with SQLite databases in tables specific to the source and other defining factors. These tables are updated programatically, however, this has yet to be automated. Data integrity tests are performed upon appending the tables.
@@ -49,12 +49,31 @@ correlated_variables = select_top_variables(df3.loc[df3.index[:InSamp_length]], 
 
 vif_results = calculate_vif(df3.loc[df3.index[:InSamp_length], correlated_variables['Variable']])
 ```
+The third step of the variable selection procedure is a Granger Causality test. This involves first running the variables through a process of fitting an Ordinary Least Squares regression of increasing order to determine the ideal number of lags for each remaining series based on Akaike Information Criterion (AIC). From there, we are able to determine which independent variables granger-cause the target variable.
 
-Upon completing this Variable Selection process, we then lag each of the selected indepent variables a number of times to provide some sense of trend to the model.
+
 ```python
-for feature in features:
-    for lag in range(1, lag_order+1):
-        df6[f'{feature}_lag{lag}'] = df6[feature].shift(lag)
+def select_lag_aic(target_series, var_series, max_lag=50):
+    lags = range(1, max_lag + 1)
+    aic_values = []
+
+    for lag in lags:
+        X = lagmat2ds(var_series, lag, trim='both', dropex=1)
+        X = sm.add_constant(X)
+        model = sm.OLS(target_series[lag:], X)
+        result = model.fit()
+        aic_values.append(result.aic)
+
+    return lags[np.argmin(aic_values)]
+
+def granger_causality_test(target_series, var_series, max_lag):
+    X = lagmat2ds(var_series, max_lag, trim='both', dropex=1)
+    X = sm.add_constant(X)
+    y = target_series[max_lag:]
+    model = sm.OLS(y, X)
+    result = model.fit()
+
+    return result.f_pvalue
 ```
 
 ## Training the Model
